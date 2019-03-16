@@ -1,3 +1,5 @@
+/* Note: Partial Sass files are imported last bc they contain media queries */
+
 body {
     font-family: sans-serif;
   }
@@ -37,3 +39,6 @@ h1 {
         color: rgba(0,0,0,0.7);
     }
 }
+
+@import 'styles-m';
+@import 'styles-lg';

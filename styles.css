@@ -1,3 +1,4 @@
+/* Note: Partial Sass files are imported last bc they contain media queries */
 body {
   font-family: sans-serif;
 }
@@ -34,6 +35,17 @@ h1 {
 }
 .social svg:hover {
   color: rgba(0, 0, 0, 0.7);
+}
+
+@media screen and (min-width: 581px) {
+  header {
+    grid-template-columns: 0.25fr 4fr 1fr 0.25fr;
+  }
+}
+@media screen and (min-width: 871px) {
+  header {
+    grid-template-columns: 1fr 4fr 1fr 1fr;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
