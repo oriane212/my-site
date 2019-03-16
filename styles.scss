@@ -1,3 +1,39 @@
 body {
     font-family: sans-serif;
   }
+
+/* header */
+
+header {
+    height: 229px;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 0.25fr 1.5fr 1fr 0.25fr;
+    grid-template-areas: 
+    '. name social .'
+}
+
+h1 { 
+    grid-area: name;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: rgba(0,0,0,0.7);
+    animation: slide-from-top 2s ease-out forwards;
+ }
+
+.social {
+    grid-area: social;
+    margin: 0.47em;
+    animation: slide-from-top 2s ease-out forwards;
+    a {
+        text-decoration: none;
+    }
+    svg {
+        padding-right: 12px;
+        color: rgba(0,0,0,0.4);
+    }
+    svg:hover {
+        color: rgba(0,0,0,0.7);
+    }
+}
