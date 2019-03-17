@@ -7,12 +7,11 @@ body {
 /* header */
 
 header {
-    height: 229px;
-    margin-top: 30px;
     display: grid;
     grid-template-columns: 0.25fr 1.5fr 1fr 0.25fr;
-    grid-template-areas: 
-    '. name social .'
+    grid-template-areas: '. name social .';
+    height: 36px;
+    margin-top: 30px;
 }
 
 h1 { 
@@ -39,6 +38,70 @@ h1 {
         color: rgba(0,0,0,0.7);
     }
 }
+
+@keyframes slide-from-top {
+    from {
+      position: absolute;
+      top: -500px;
+      opacity: 0;
+    }
+    to {
+      position: relative;
+      top: 0;
+      opacity: 1;
+    }
+  }
+
+/* intro */
+
+.intro {
+    display: grid;
+    grid-template-columns: 0.25fr 1fr 2fr 0.25fr;
+    grid-template-areas: '. profile blurb .';
+    img {
+        grid-area: profile;
+        justify-self: right;
+        width: 150px;
+        height: 150px;
+        opacity: 0.8;
+        animation-name: fadein_profile;
+        animation-duration: 1s;
+        animation-timing-function: ease-in;
+    }
+    p {
+        grid-area: blurb;
+        align-self: center;
+        font-weight: 100;
+        color: rgba(0,0,0,0.7);
+        letter-spacing: 1px;
+        animation: fadein_text 1s ease;
+        font-size: 0.7em;
+        padding: 0px;
+        span {
+            font-size: 1.4em;
+        }
+    }
+}
+
+@keyframes fadein_profile {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 0.8;
+    }
+  }
+
+@keyframes fadein_text {
+    from {
+        opacity: 0;
+        }
+        to {
+        opacity: 0.7;
+        }
+    }
+
+/* Import Sass partials for responsive styles */
 
 @import 'styles-m';
 @import 'styles-lg';

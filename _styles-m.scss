@@ -1,6 +1,22 @@
 
-@media screen and (min-width: 581px) {
+@media screen and (min-width: 425px) {
     header {
         grid-template-columns: 0.25fr 4fr 1fr 0.25fr;
+    }
+}
+
+@media screen and (min-width: 581px) {
+    header {
+        grid-template-columns: 0.75fr 4fr 1fr 0.25fr;
+    }
+    .intro {
+        grid-template-columns: 0.5fr 1fr 1.5fr 0.5fr;
+        img {
+            width: 200px;
+            height: 200px;
+        }
+        p {
+            font-size: 0.8em;
+        }
     }
 }
