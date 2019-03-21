@@ -101,6 +101,43 @@ h1 {
         }
     }
 
+/* Projects */
+
+article {
+    padding: 6px;
+}
+
+h2 {
+    font-size: 0.7em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation-name: fadein_text;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    opacity: 0.7;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 0.7em;
+    letter-spacing: 1px;
+    animation-name: fadein_text;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    opacity: 0.7;
+    font-weight: 200;
+  }
+
+.topics {
+    font-size: 0.6em;
+    letter-spacing: 1px;
+    animation-name: fadein_text;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    opacity: 0.6;
+    font-weight: bold;
+}
+
 /* Import Sass partials for responsive styles */
 
 @import 'styles-m';
