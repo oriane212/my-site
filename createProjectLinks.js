@@ -87,7 +87,8 @@ function replaceDash(str) {
 
 function createProjectLinks(repos_filtered) {
     console.log(repos_filtered);
-    let $section_projects = document.getElementById('projects');
+    //let project_links = [];
+    let $div_projects = document.getElementById('projects');
     //let repos_filtered = getFromGH(repo_names);
     repos_filtered.map((repo) => {
         // create link el
@@ -118,9 +119,16 @@ function createProjectLinks(repos_filtered) {
         $hgroup.append($h2, $h3);
         $article.append($hgroup, $p);
         $a.append($article);
-        $section_projects.append($a);
+
+        //project_links.push($a);
+
+        $div_projects.append($a);
     })
+
+    //return project_links;
 }
+
+// console.log(window.innerWidth);
 
 // TODO: finish responsive styling for projects - only basic styling has been added so far
 

@@ -19,4 +19,13 @@
             font-size: 0.8em;
         }
     }
+    .container {
+        display: grid;
+        grid-template-columns: 0.5fr 2fr 0.5fr;
+        grid-template-areas: '. content .';
+        margin-top: 30px;
+    }
+    %container-content {
+        justify-self: center;
+    }
 }
