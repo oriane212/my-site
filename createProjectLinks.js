@@ -93,7 +93,8 @@ function createProjectLinks(repos_filtered) {
     repos_filtered.map((repo) => {
         // create link el
         let $a = document.createElement('a');
-        //$a.setAttribute('href', repo.html_url).setAttribute('id', repo.name);
+        $a.setAttribute('href', repo.html_url);
+        $a.setAttribute('id', repo.name);
         //$a.classList.add('project');
         // create article el
         let $article = document.createElement('article');

@@ -108,6 +108,11 @@ h1 {
 }
 
 /* Projects */
+a:-webkit-any-link {
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: none;
+}
+
 article {
   padding: 6px;
 }
