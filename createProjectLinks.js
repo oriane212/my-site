@@ -1,7 +1,7 @@
 
 // list of Github repo names to create project links from
 const gh_repos = [
-    'coffee-map', 'myReads', 'restaurant-reviews', 'frogger', 'memory-game', 'personalized-language-learning'
+    'chart-alt', 'coffee-map', 'myReads', 'restaurant-reviews', 'frogger', 'memory-game', 'personalized-language-learning'
 ]
 
 /**

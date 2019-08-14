@@ -83,6 +83,26 @@ h1 {
     }
 }
 
+svg.h-line {
+    position: absolute;
+    /* left: 100px; */
+    line {
+        stroke: rgba(0,0,0,0.2);
+        stroke-width: 1;
+        animation: offset 2s ease forwards;
+        /*
+        stroke-dasharray: 300;
+        stroke-dashoffset: 300;
+        */
+    }
+}
+
+@keyframes offset {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
 @keyframes fadein_profile {
     from {
       opacity: 0;

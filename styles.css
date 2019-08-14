@@ -79,6 +79,25 @@ h1 {
   font-size: 1.4em;
 }
 
+svg.h-line {
+  position: absolute;
+  /* left: 100px; */
+}
+svg.h-line line {
+  stroke: rgba(0, 0, 0, 0.2);
+  stroke-width: 1;
+  animation: offset 2s ease forwards;
+  /*
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  */
+}
+
+@keyframes offset {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
 @keyframes fadein_profile {
   from {
     opacity: 0;
@@ -153,6 +172,15 @@ h3 {
   header {
     grid-template-columns: 0.25fr 4fr 1fr 0.25fr;
   }
+
+  /*
+  svg.h-line {
+      line {
+          stroke-dasharray: 450;
+          stroke-dashoffset: 450;
+      }
+  }
+  */
 }
 @media screen and (min-width: 581px) {
   header {
@@ -170,6 +198,14 @@ h3 {
     font-size: 0.8em;
   }
 
+  /*
+  svg.h-line {
+      line {
+          stroke-dasharray: 600;
+          stroke-dashoffset: 600;
+      }
+  }
+  */
   .container {
     display: grid;
     grid-template-columns: 0.5fr 2fr 0.5fr;
@@ -192,6 +228,15 @@ h3 {
   .intro p {
     font-size: 1em;
   }
+
+  /*
+  svg.h-line {
+      line {
+          stroke-dasharray: 800;
+          stroke-dashoffset: 800;
+      }
+  }
+  */
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -3,6 +3,14 @@
     header {
         grid-template-columns: 0.25fr 4fr 1fr 0.25fr;
     }
+    /*
+    svg.h-line {
+        line {
+            stroke-dasharray: 450;
+            stroke-dashoffset: 450;
+        }
+    }
+    */
 }
 
 @media screen and (min-width: 581px) {
@@ -19,6 +27,14 @@
             font-size: 0.8em;
         }
     }
+    /*
+    svg.h-line {
+        line {
+            stroke-dasharray: 600;
+            stroke-dashoffset: 600;
+        }
+    }
+    */
     .container {
         display: grid;
         grid-template-columns: 0.5fr 2fr 0.5fr;
