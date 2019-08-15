@@ -41,6 +41,7 @@ var server = http.createServer(function (req, res) {
         res.end();
     } else {
         res.write(fs.readFileSync('./index.html'));
+        res.end();
     }
 
 });
