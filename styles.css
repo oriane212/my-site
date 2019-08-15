@@ -93,6 +93,10 @@ svg.h-line line {
   */
 }
 
+#headerline1 {
+  top: 53px;
+}
+
 @keyframes offset {
   to {
     stroke-dashoffset: 0;
@@ -127,12 +131,37 @@ svg.h-line line {
 }
 
 /* Projects */
+#projects a {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas: "icon article";
+  padding: 12px;
+}
+#projects a:hover {
+  color: black;
+}
+#projects a:hover .projecticon > rect {
+  fill: rgba(0, 0, 0, 0.4);
+}
+
 a:-webkit-any-link {
   color: rgba(0, 0, 0, 0.7);
   text-decoration: none;
 }
 
+div.icon {
+  grid-area: icon;
+  justify-self: right;
+  align-self: center;
+  margin-right: 12px;
+  animation-name: fadein_text;
+  animation-duration: 4s;
+  animation-timing-function: ease;
+  opacity: 0.7;
+}
+
 article {
+  grid-area: article;
   padding: 6px;
 }
 
@@ -171,6 +200,10 @@ h3 {
 @media screen and (min-width: 425px) {
   header {
     grid-template-columns: 0.25fr 4fr 1fr 0.25fr;
+  }
+
+  #projects a {
+    grid-template-columns: 1fr 3fr;
   }
 
   /*
