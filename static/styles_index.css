@@ -37,6 +37,10 @@ h1 {
   color: rgba(0, 0, 0, 0.7);
 }
 
+#gh {
+  margin-bottom: 2px;
+}
+
 @keyframes slide-from-top {
   from {
     position: absolute;
