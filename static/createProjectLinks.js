@@ -7,8 +7,8 @@ const rectObjs = [
         width: 100,
         height: 100,
         type: 'project',
-        id: 'chart-alt',
-        title: 'Chart Alt',
+        id: 'chart-access',
+        title: 'Chart Access',
         caption: '',
         tools: '',
         link: '',
@@ -16,9 +16,9 @@ const rectObjs = [
             { el: 'rect', attributes: [['x', 15 + ox], ['y', 40], ['rx', "2"], ['ry', "2"], ['width', '8'], ['height', '15']] },
             { el: 'rect', attributes: [['x', 27 + ox], ['y', 30], ['rx', "2"], ['ry', "2"], ['width', '8'], ['height', '25']] },
             { el: 'rect', attributes: [['x', 39 + ox], ['y', 15], ['rx', "2"], ['ry', "2"], ['width', '8'], ['height', '40']] },
-            { el: 'rect', attributes: [['x', 40 + ox], ['y', 60], ['rx', "2"], ['ry', "2"], ['width', '40'], ['height', '6']] },
-            { el: 'rect', attributes: [['x', 40 + ox], ['y', 70], ['rx', "2"], ['ry', "2"], ['width', '40'], ['height', '6']] },
-            { el: 'rect', attributes: [['x', 40 + ox], ['y', 80], ['rx', "2"], ['ry', "2"], ['width', '40'], ['height', '6']] }
+            //{ el: 'rect', attributes: [['x', 40 + ox], ['y', 60], ['rx', "2"], ['ry', "2"], ['width', '40'], ['height', '6']] },
+            { el: 'rect', attributes: [['x', 40 + ox], ['y', 70], ['rx', "2"], ['ry', "2"], ['width', '40'], ['height', '6']] }
+            //{ el: 'rect', attributes: [['x', 40 + ox], ['y', 80], ['rx', "2"], ['ry', "2"], ['width', '40'], ['height', '6']] }
         ]
     },
     {
@@ -161,7 +161,7 @@ function createSVGicon(repo_name) {
 
 // list of Github repo names to create project links from
 const gh_repos = [
-    'chart-alt', 'coffee-map', 'myReads', 'frogger', 'memory-game', 'personalized-language-learning'
+    'chart-access', 'coffee-map', 'myReads', 'frogger', 'memory-game', 'personalized-language-learning'
 ]
 
 /**
