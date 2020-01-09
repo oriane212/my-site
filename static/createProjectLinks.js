@@ -143,7 +143,7 @@ function createSVGicon(repo_name) {
                 for (let attribute of icon.attributes) {
                     iconEl.setAttribute(attribute[0], attribute[1]);
                 }
-                console.log(iconEl);
+                //console.log(iconEl);
                 svgGroup.appendChild(iconEl);
             }
 
@@ -247,6 +247,20 @@ function replaceDash(str) {
 
 function createProjectLinks(repos_filtered) {
     console.log(repos_filtered);
+
+    let myreads;
+    repos_filtered.forEach((repo, i)=> {
+        if (repo.name === 'myReads') {
+            myreads = repos_filtered.splice(i, 1);
+            console.log(myreads);
+        }
+    });
+    
+    let repos_reordered = repos_filtered.splice(0,2);
+    repos_reordered.push(myreads[0]);
+    repos_filtered.unshift(repos_reordered[0], repos_reordered[1], repos_reordered[2]);
+    console.log(repos_filtered);
+
     //let project_links = [];
     let $div_projects = document.getElementById('projects');
     //let repos_filtered = getFromGH(repo_names);
