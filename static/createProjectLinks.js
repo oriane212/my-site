@@ -7,6 +7,28 @@ const rectObjs = [
         width: 100,
         height: 100,
         type: 'project',
+        id: 'wednesday-words',
+        title: 'Wednesday Words',
+        caption: '',
+        tools: '',
+        link: '',
+        icon: [
+            { el: 'rect', attributes: [['x', 15 + ox], ['y', 40], ['rx', "2"], ['ry', "2"], ['width', '10'], ['height', '10']] },
+            { el: 'rect', attributes: [['x', 27 + ox], ['y', 40], ['rx', "2"], ['ry', "2"], ['width', '10'], ['height', '10']] },
+            { el: 'rect', attributes: [['x', 39 + ox], ['y', 40], ['rx', "2"], ['ry', "2"], ['width', '10'], ['height', '10']] },
+            { el: 'rect', attributes: [['x', 51 + ox], ['y', 40], ['rx', "2"], ['ry', "2"], ['width', '10'], ['height', '10']] },
+            { el: 'rect', attributes: [['x', 63 + ox], ['y', 40], ['rx', "2"], ['ry', "2"], ['width', '10'], ['height', '10']] },
+            { el: 'rect', attributes: [['x', 51 + ox], ['y', 28], ['rx', "2"], ['ry', "2"], ['width', '10'], ['height', '10']] },
+            { el: 'rect', attributes: [['x', 51 + ox], ['y', 52], ['rx', "2"], ['ry', "2"], ['width', '10'], ['height', '10']] },
+            { el: 'rect', attributes: [['x', 51 + ox], ['y', 64], ['rx', "2"], ['ry', "2"], ['width', '10'], ['height', '10']] }
+        ]
+    },
+    {
+        x: ox,
+        y: 0,
+        width: 100,
+        height: 100,
+        type: 'project',
         id: 'chart-access',
         title: 'Chart Access',
         caption: '',
@@ -161,7 +183,7 @@ function createSVGicon(repo_name) {
 
 // list of Github repo names to create project links from
 const gh_repos = [
-    'chart-access', 'coffee-map', 'myReads', 'frogger', 'memory-game', 'personalized-language-learning'
+    'wednesday-words', 'chart-access', 'coffee-map', 'myReads', 'frogger', 'memory-game', 'personalized-language-learning'
 ]
 
 /**
@@ -170,6 +192,7 @@ const gh_repos = [
  */
 
 function getFromGH(repo_names) {
+    console.log(repo_names);
     // initialize project
     let repos_filtered = [];
     // adding this header is necessary for accessing 'topics' property for each repo
@@ -181,13 +204,16 @@ function getFromGH(repo_names) {
         headers: headers,
         mode: 'cors'
     }
+
+
     // request for all repos
-    let request = new Request('https://api.github.com/users/oriane212/repos', requestData);
+    let request = new Request(`https://api.github.com/users/oriane212/repos?sort="created"`, requestData);
 
     // fetch and filter repos by names in gh_repos list
     fetch(request)
         .then(resp => resp.json())
         .then((myJson) => {
+            console.log(myJson);
             myJson.map((repo) => {
                 repo_names.map((name) => {
                     if (name === repo.name) {
