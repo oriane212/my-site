@@ -55,12 +55,22 @@ const rectObjs = [
         tools: 'ReactJS, Mapbox GL JS',
         link: 'https://github.com/oriane212/coffee-map',
         icon: [
-            { el: 'circle', attributes: [['cx', ox + 50], ['cy', 40], ['r', '4']] },
-            { el: 'polygon', attributes: [['points', `${ox + 46},${40} ${ox + 54},${40}, ${ox + 50.5},${55} ${ox + 49.5},${55}`]] },
-            { el: 'circle', attributes: [['cx', ox + 60], ['cy', 75], ['r', '4']] },
-            { el: 'polygon', attributes: [['points', `${ox + 56},${75} ${ox + 64},${75}, ${ox + 60.5},${90} ${ox + 59.5},${90}`]] },
-            { el: 'circle', attributes: [['cx', ox + 80], ['cy', 25], ['r', '4']] },
-            { el: 'polygon', attributes: [['points', `${ox + 76},${25} ${ox + 84},${25}, ${ox + 80.5},${40} ${ox + 79.5},${40}`]] }
+            
+            //{ el: 'polygon', attributes: [['points', `${ox + 46},${40} ${ox + 54},${40}, ${ox + 50.5},${55} ${ox + 49.5},${55}`]] },
+            { el: 'ellipse', attributes: [['cx', ox + 40 + 8], ['cy', 40+8], ['rx', '8'], ['ry', '5']] },
+            { el: 'rect', attributes: [['x', ox + 40 - 8], ['y', 40], ['width', '16'], ['height', '16']] },
+            //{ el: 'ellipse', attributes: [['cx', ox + 50], ['cy', 40], ['rx', '8'], ['ry', '4']] },
+            //{ el: 'circle', attributes: [['cx', ox + 50], ['cy', 40], ['r', '4']] },
+            { el: 'ellipse', attributes: [['cx', ox + 60 + 8], ['cy', 75+8], ['rx', '8'], ['ry', '5']] },
+            { el: 'rect', attributes: [['x', ox + 60 - 8], ['y', 75], ['width', '16'], ['height', '16']] },
+            //{ el: 'ellipse', attributes: [['cx', ox + 60], ['cy', 75], ['rx', '4'], ['ry', '2']] },
+            //{ el: 'circle', attributes: [['cx', ox + 60], ['cy', 75], ['r', '4']] },
+            //{ el: 'polygon', attributes: [['points', `${ox + 56},${75} ${ox + 64},${75}, ${ox + 60.5},${90} ${ox + 59.5},${90}`]] },
+            { el: 'ellipse', attributes: [['cx', ox + 75 + 8], ['cy', 25+8], ['rx', '8'], ['ry', '5']] },
+            { el: 'rect', attributes: [['x', ox + 75 - 8], ['y', 25], ['width', '16'], ['height', '16']] }
+            //{ el: 'ellipse', attributes: [['cx', ox + 80], ['cy', 25], ['rx', '4'], ['ry', '2']] }
+            //{ el: 'circle', attributes: [['cx', ox + 80], ['cy', 25], ['r', '4']] }
+            //{ el: 'polygon', attributes: [['points', `${ox + 76},${25} ${ox + 84},${25}, ${ox + 80.5},${40} ${ox + 79.5},${40}`]] }
         ]
     },
     {
@@ -143,14 +153,44 @@ function createSVGicon(repo_name) {
     svg.setAttribute('width', 100);
     svg.setAttribute('height', 100);
 
+    let defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
+
+    let pattern = document.createElementNS("http://www.w3.org/2000/svg", "pattern");
+    pattern.setAttribute('id', 'dhatch');
+    pattern.setAttribute('width', .03);
+    pattern.setAttribute('height', .03);
+    pattern.setAttribute('x', 0);
+    pattern.setAttribute('y', 0);
+
+    let hatchline = document.createElementNS("http://www.w3.org/2000/svg", "line");
+    hatchline.setAttribute('x1', 0);
+    hatchline.setAttribute('x2', 100);
+    hatchline.setAttribute('y1', 1);
+    hatchline.setAttribute('y2', 1);
+    hatchline.setAttribute('stroke', 'rgba(0,0,0,0.5)');
+    hatchline.setAttribute('stroke-width', '0.25');
+    hatchline.setAttribute('stroke-dasharray', 100);
+    hatchline.setAttribute('stroke-dashoffset', 100);
+    hatchline.classList.add('diagonalhatch');
+
+    pattern.appendChild(hatchline);
+    defs.appendChild(pattern);
+
     let rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-    rect.setAttribute('fill', 'rgba(0,0,0,0.1)');
+    //rect.setAttribute('fill', 'rgba(0,0,0,0.1)');
+    //rect.setAttribute('fill', 'white');
+    rect.setAttribute('fill', 'url(#dhatch)');
+    rect.setAttribute('stroke', 'rgba(0,0,0,0.5)');
+    rect.setAttribute('stroke-width', '0.25');
+
     rect.setAttribute('x', 0);
     rect.setAttribute('y', 0);
-    rect.setAttribute('width', 100);
-    rect.setAttribute('height', 100);
+    rect.setAttribute('width', 150);
+    rect.setAttribute('height', 150);
 
-    svg.appendChild(rect);
+    rect.classList.add('rotate');
+
+    svg.append(defs, rect);
 
     rectObjs.forEach((repo) => {
         if (repo.id === repo_name) {
@@ -159,6 +199,8 @@ function createSVGicon(repo_name) {
             let svgGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
             svgGroup.setAttribute('role', 'img');
             svgGroup.setAttribute('fill', 'white');
+            svgGroup.setAttribute('stroke', 'rgba(0,0,0,1)');
+            svgGroup.setAttribute('stroke-width', '0.25');
 
             for (let icon of repo.icon) {
                 let iconEl = document.createElementNS("http://www.w3.org/2000/svg", icon.el);

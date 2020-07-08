@@ -60,27 +60,34 @@ h1 {
   grid-template-areas: ". profile blurb .";
 }
 .intro img {
+  /* visibility: hidden; */
   grid-area: profile;
   justify-self: right;
   width: 150px;
   height: 150px;
-  opacity: 0.8;
+  opacity: 0.7;
   animation-name: fadein_profile;
-  animation-duration: 1s;
+  animation-duration: 3s;
   animation-timing-function: ease-in;
 }
 .intro p {
+  /* visibility: hidden; */
   grid-area: blurb;
   align-self: center;
   font-weight: 100;
-  color: rgba(0, 0, 0, 0.7);
+  opacity: 0.7;
+  /* color: rgba(0,0,0,0.7); */
   letter-spacing: 1px;
-  animation: fadein_text 1s ease;
+  animation: fadein_text 3s ease-in;
   font-size: 0.7em;
   padding: 0px;
 }
 .intro p span {
   font-size: 1.4em;
+}
+
+#headerline1 {
+  top: 53px;
 }
 
 svg.h-line {
@@ -96,9 +103,8 @@ svg.h-line line {
   stroke-dashoffset: 300;
   */
 }
-
-#headerline1 {
-  top: 53px;
+svg.h-line line.delay {
+  animation-delay: 1s;
 }
 
 @keyframes offset {
@@ -111,7 +117,7 @@ svg.h-line line {
     opacity: 0;
   }
   to {
-    opacity: 0.8;
+    opacity: 0.7;
   }
 }
 @keyframes fadein_text {
@@ -145,7 +151,7 @@ svg.h-line line {
   color: black;
 }
 #projects a:hover .projecticon > rect {
-  fill: rgba(0, 0, 0, 0.4);
+  fill: rgba(0, 0, 0, 0.1);
 }
 
 a:-webkit-any-link {
@@ -159,14 +165,23 @@ div.icon {
   align-self: center;
   margin-right: 12px;
   animation-name: fadein_text;
-  animation-duration: 4s;
-  animation-timing-function: ease;
+  animation-duration: 3s;
+  animation-timing-function: ease-in;
   opacity: 0.7;
+}
+div.icon line.diagonalhatch {
+  animation: offset 4s ease-in forwards;
+  animation-delay: 3s;
+}
+
+rect.rotate {
+  transform: translate(50px, -50px) rotate(45deg);
 }
 
 article {
   grid-area: article;
   padding: 6px;
+  animation: fadein_text 4s ease;
 }
 
 h2 {
