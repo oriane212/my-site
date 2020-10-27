@@ -51,3 +51,15 @@
         justify-self: center;
     }
 }
+
+@media screen and (min-width: 1080px) {
+    .container {
+        grid-template-columns: 0.25fr 4fr 0.25fr;
+        grid-template-areas: '. content .';
+
+        div#projects {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
