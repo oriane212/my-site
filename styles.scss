@@ -86,6 +86,7 @@ h1 {
         padding: 0px;
         span {
             font-size: 1.4em;
+            display: block;
         }
     }
 }
@@ -166,7 +167,49 @@ svg.h-line {
     a:hover {
         color: black;
         .projecticon>rect {
-                fill: rgba(0,0,0,0.1);
+            fill: rgba(0,0,0,0.1);
+        }
+    }
+
+    #wednesday-words:hover {
+        .projecticon>rect {
+            fill: rgba(165, 42, 42, 0.4);
+        }
+    }
+
+    #chart-access:hover {
+        .projecticon>rect {
+            fill: rgba(242, 241, 243, 1);
+        }
+    }
+
+    #coffee-map:hover {
+        .projecticon>rect {
+            fill: rgba(117, 98, 98, 0.4);
+        }
+    }
+
+    #myReads:hover {
+        .projecticon>rect {
+            fill: rgba(48, 176, 213, 0.4);
+        }
+    }
+
+    #frogger:hover {
+        .projecticon>rect {
+            fill: rgba(79, 98, 212, 0.4);
+        }
+    }
+
+    #personalized-language-learning:hover {
+        .projecticon>rect {
+            fill: rgba(0,0,0,0.3);
+        }
+    }
+
+    #memory-game:hover {
+        .projecticon>rect {
+            fill: rgba(96, 206, 187, 0.4);
         }
     }
 }
