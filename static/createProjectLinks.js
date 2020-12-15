@@ -147,6 +147,22 @@ const rectObjs = [
             { el: 'rect', attributes: [['x', 53 + ox], ['y', 30], ['rx', "2"], ['ry', "2"], ['width', '15'], ['height', '15']] },
             { el: 'rect', attributes: [['x', 53 + ox], ['y', 50], ['rx', "2"], ['ry', "2"], ['width', '15'], ['height', '15']] }
         ]
+    },
+    {
+        x: ox,
+        y: 0,
+        width: 100,
+        height: 100,
+        type: 'project',
+        id: 'restaurant-reviews',
+        title: 'Restaurant Reviews',
+        color: 'rgba(255, 152, 0, 0.2)',
+        link: 'https://github.com/oriane212/restaurant-reviews',
+        icon: [
+            { el: 'rect', attributes: [['x', 23 + ox], ['y', 20], ['rx', "2"], ['ry', "2"], ['width', '55'], ['height', '25']] },
+            { el: 'rect', attributes: [['x', 23 + ox], ['y', 55], ['rx', "2"], ['ry', "2"], ['width', '55'], ['height', '10']] },
+            { el: 'rect', attributes: [['x', 23 + ox], ['y', 70], ['rx', "2"], ['ry', "2"], ['width', '55'], ['height', '10']] }
+        ]
     }
 ]
 
@@ -232,7 +248,7 @@ function createSVGicon(repo_name) {
 
 // list of Github repo names to create project links from
 const gh_repos = [
-    'wednesday-words', 'chart-access', 'coffee-map', 'myReads', 'frogger', 'memory-game', 'personalized-language-learning'
+    'wednesday-words', 'chart-access', 'coffee-map', 'myReads', 'frogger', 'memory-game', 'personalized-language-learning', 'restaurant-reviews'
 ]
 
 /**
@@ -381,36 +397,6 @@ function createProjectLinks(repos_filtered) {
         $div_projects.append($a);
     })
 
-
-    /*
-    let coffeeIcon = createSVGicon('coffee-map');
-    console.log(coffeeIcon);
-
-    let coffee = document.querySelector("#coffee-map .icon");
-    console.log(coffee);
-    coffee.appendChild(coffeeIcon);
-    */
-
-    //coffee.insertAdjacentElement('afterbegin', coffeeIcon);
-
-    //return project_links;
 }
 
-// console.log(window.innerWidth);
-
-// TODO: finish responsive styling for projects - only basic styling has been added so far
-
-// TODO: add topics in Github to projects!
-
-// TODO: add viewport breakpoints
-// should the createProjectLinks function just return the link El and another function handles the responsive layout and appending to the DOM?
-
 getFromGH(gh_repos);
-
-// project.description
-// project.html_url (repo page)
-// project.homepage (GitHub page), if !== ''
-// project.topics (array)
-
-
-// TODO: write createProjectIcon function

@@ -212,6 +212,12 @@ svg.h-line {
             fill: rgba(96, 206, 187, 0.4);
         }
     }
+
+    #restaurant-reviews:hover {
+        .projecticon>rect {
+            fill: rgba(255, 152, 0, 0.2);
+        }
+    }
 }
 
 a:-webkit-any-link {
