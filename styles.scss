@@ -171,6 +171,12 @@ svg.h-line {
         }
     }
 
+    #zdog-ui:hover {
+        .projecticon>rect {
+            fill: rgba(255, 221, 187, 1);
+        }
+    }
+
     #wednesday-words:hover {
         .projecticon>rect {
             fill: rgba(165, 42, 42, 0.4);
@@ -215,7 +221,7 @@ svg.h-line {
 
     #restaurant-reviews:hover {
         .projecticon>rect {
-            fill: rgba(255, 152, 0, 0.2);
+            fill: rgba(33, 150, 243, 0.3);
         }
     }
 }

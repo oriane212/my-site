@@ -154,6 +154,9 @@ svg.h-line line.delay {
 #projects a:hover .projecticon > rect {
   fill: rgba(0, 0, 0, 0.1);
 }
+#projects #zdog-ui:hover .projecticon > rect {
+  fill: #ffddbb;
+}
 #projects #wednesday-words:hover .projecticon > rect {
   fill: rgba(165, 42, 42, 0.4);
 }
@@ -176,7 +179,7 @@ svg.h-line line.delay {
   fill: rgba(96, 206, 187, 0.4);
 }
 #projects #restaurant-reviews:hover .projecticon > rect {
-  fill: rgba(255, 152, 0, 0.2);
+  fill: rgba(33, 150, 243, 0.3);
 }
 
 a:-webkit-any-link {

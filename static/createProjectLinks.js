@@ -7,9 +7,25 @@ const rectObjs = [
         width: 100,
         height: 100,
         type: 'project',
+        id: 'zdog-ui',
+        title: 'Zdog Ui',
+        color: 'rgba(165, 42, 42, .4)',
+        caption: '',
+        tools: '',
+        link: '',
+        icon: [
+            { el: 'svg', attributes: [['id', 'zdog-ui-icon'], ['width', '100'], ['height', '100']] },
+        ]
+    },
+    {
+        x: ox,
+        y: 0,
+        width: 100,
+        height: 100,
+        type: 'project',
         id: 'wednesday-words',
         title: 'Wednesday Words',
-        color: 'rgba(165, 42, 42, .4)',
+        color: 'rgba(0, 0, 0, 1)',
         caption: '',
         tools: '',
         link: '',
@@ -248,7 +264,7 @@ function createSVGicon(repo_name) {
 
 // list of Github repo names to create project links from
 const gh_repos = [
-    'wednesday-words', 'chart-access', 'coffee-map', 'myReads', 'frogger', 'memory-game', 'personalized-language-learning', 'restaurant-reviews'
+    'zdog-ui', 'wednesday-words', 'chart-access', 'coffee-map', 'myReads', 'frogger', 'memory-game', 'personalized-language-learning', 'restaurant-reviews'
 ]
 
 /**
@@ -395,8 +411,113 @@ function createProjectLinks(repos_filtered) {
         //project_links.push($a);
 
         $div_projects.append($a);
+
+        if (repo.name === 'zdog-ui') {
+            createZdogUI_icon();
+        }
     })
 
 }
 
+function createZdogUI_icon() {
+     // illo.js
+
+        // create illo
+        let illo = new Zdog.Illustration({
+            // set canvas with id 'illo'
+            element: "#zdog-ui-icon",
+            zoom: .35,
+            dragRotate: false,
+            rotate: {
+                x: 0,
+                y: 0,
+                z: 0
+            }
+        });
+
+        // add shapes
+
+        let shape0 = new Zdog['Box']({
+            "color": "#5C5C5C",
+            "backface": true,
+            "stroke": "0.25",
+            "fill": false,
+            "translate": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "rotate": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "width": 100,
+            "height": 100,
+            "depth": 100,
+            "frontFace": "#000000",
+            "rearFace": "#000000",
+            "topFace": "#000000",
+            "bottomFace": "#000000",
+            "leftFace": "#000000",
+            "rightFace": "#000000",
+            "addTo": illo
+        })
+                
+        let shape1 = new Zdog['Box']({
+            "color": "#5C5C5C",
+            "backface": true,
+            "stroke": "1",
+            "fill": true,
+            "translate": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "rotate": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "width": "98",
+            "height": "98",
+            "depth": "98",
+            "frontFace": "#ffffff",
+            "rearFace": "#cecece",
+            "topFace": "#f5f5f5",
+            "bottomFace": "#bfbfbf",
+            "leftFace": "#e0e0e0",
+            "rightFace": "#e0e0e0",
+            "addTo": shape0
+        })
+        
+
+        illo.updateRenderGraph();
+
+        /* Zdog animate fn for easeInOut */
+
+        let ticker = 0;
+        let cycleCount = 450;
+
+        function animate() {
+            let progress = ticker / cycleCount;
+            // apply easing to rotation
+            let tween = Zdog.easeInOut(progress % 1, 5);
+
+            illo.rotate.y = 0 + (tween * Zdog.TAU);
+            illo.rotate.z = 0 + (tween * Zdog.TAU);
+            ticker++;
+
+            illo.updateRenderGraph();
+            requestAnimationFrame(animate);
+        }
+
+        setTimeout(animate, 5000);
+        //animate();
+}
+
 getFromGH(gh_repos);
+
+
+
+console.log('testing');
